@@ -26,8 +26,8 @@ logger = logging.getLogger(__name__)
 class Found:
     """Successful outcome: the coordinates that were tapped."""
 
-    x: int
-    y: int
+    x: int  # pixels
+    y: int  # pixels
 
 
 @dataclass(frozen=True)

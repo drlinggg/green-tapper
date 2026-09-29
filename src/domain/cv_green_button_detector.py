@@ -33,18 +33,18 @@ class AnnotationStyle:
     bbox_bgr: tuple[int, int, int] = (255, 0, 0)  # blue box and center dot
     original_weight: float = 0.6  # blend weight of the original screenshot
     overlay_weight: float = 0.4  # blend weight of the mask overlay
-    bbox_thickness: int = 3
-    center_radius: int = 6
+    bbox_thickness: int = 3  # pixels
+    center_radius: int = 6  # pixels
 
 
 @dataclass(frozen=True)
 class ButtonMatch:
     """A detected button: bbox center to tap, plus its bounding box and area."""
 
-    x: int
-    y: int
-    bbox: tuple[int, int, int, int]  # x, y, w, h
-    area: int
+    x: int  # pixels
+    y: int  # pixels
+    bbox: tuple[int, int, int, int]  # x, y, w, h — pixels
+    area: int  # pixels²
 
 
 class CvGreenButtonDetector:
