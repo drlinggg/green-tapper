@@ -1,0 +1,17 @@
+.git
+.gitignore
+.venv
+venv
+env
+__pycache__
+*.pyc
+.pytest_cache
+.mypy_cache
+.ruff_cache
+dumps
+*.debug.png
+.env
+.env.example
+.DS_Store
+.idea
+.vscode

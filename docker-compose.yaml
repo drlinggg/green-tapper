@@ -1,0 +1,17 @@
+services:
+  green-tapper:
+    build: .
+    image: green-tapper:latest
+    container_name: adb_python_app
+
+    # Reach the ADB server running on the host via host.docker.internal.
+    # Docker Desktop (macOS/Windows) provides it automatically; this mapping adds
+    # it on Linux too. Set ADB_HOST=host.docker.internal in .env.
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+    env_file:
+      - .env
+
+    volumes:
+      - ./src:/app/src

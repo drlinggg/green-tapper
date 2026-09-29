@@ -1,0 +1,41 @@
+[project]
+name = "green-tapper"
+version = "0.1.0"
+description = "Find and tap a green button in an Android app via adb"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+authors = [{ name = "Andrei Banakh", email = "banakh.andrei@mail.ru" }]
+dependencies = [
+    "numpy==2.5.3",
+    "opencv-python-headless==4.14.0.94",
+    "adbutils==2.12.0",
+]
+
+[project.urls]
+Telegram = "https://t.me/abanakh"
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.dev.dependencies]
+pytest = "8.4.2"
+ruff = "0.16.9"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = [
+    "integration: exercises a real boundary (subprocess, filesystem) — deselect with -m 'not integration'",
+]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "A"]
+
+[build-system]
+requires = ["poetry-core>=2.0"]
+build-backend = "poetry.core.masonry.api"
